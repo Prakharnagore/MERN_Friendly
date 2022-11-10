@@ -7,16 +7,16 @@ const { readdirSync } = require("fs");
 const { default: mongoose } = require("mongoose");
 const PORT = process.env.PORT;
 
-// middleware
+// M I D D L E W A R E S
 app.use(cors());
 app.use(express.json());
 
-// good way of using routes ( save us from importing and then using again and again);
+// R O U T E S
 readdirSync("./routes").map((filename) =>
   app.use("/", require("./routes/" + filename))
 );
 
-// database
+// D A T A B A S E
 mongoose
   .connect(process.env.DATABASE_URL, {
     useNewUrlParser: true,
