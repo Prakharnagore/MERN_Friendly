@@ -1,8 +1,21 @@
 Steps
 
 - Frontend Setup
+1. npm i react-router-dom
+2. npm i redux
+3. npm i react-redux
+4. npm i redux-devtools-extension
+5. npm i formik
+6. npm i yup
+7. npm i react-responsive
+8. npm i react-spinner
+9. npm i axios 
+10. npm i js-cookie
+11. npm install dotenv
+
 
 - Backend Setup
+
 1. npm i express
 2. npm i nodemon
 3. npm i cors 
