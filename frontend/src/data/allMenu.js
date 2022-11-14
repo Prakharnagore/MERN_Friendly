@@ -2,7 +2,7 @@ const menu = [
   {
     name: "Campus",
     icon: "campus",
-    description: "A unique, exclusive space for college students on Facebook.",
+    description: "A unique, exclusive space for college students on Friends.",
   },
   {
     name: "Events",
@@ -28,7 +28,7 @@ const menu = [
   {
     name: "Pages",
     icon: "pages",
-    description: "Discover and connect with businesses on Facebook.",
+    description: "Discover and connect with businesses on Friends.",
   },
   {
     name: "Gaming Video",
@@ -47,7 +47,7 @@ const menu = [
       "A video destination personalized to your interests and connections.",
   },
   {
-    name: "Facebook Pay",
+    name: "Friends Pay",
     icon: "pay",
     description: "A seamless, secure way to pay on the apps you already use.",
   },
@@ -59,12 +59,12 @@ const menu = [
   {
     name: "Recent Ad Activity",
     icon: "recent",
-    description: "See all the ads you interacted with on Facebook.",
+    description: "See all the ads you interacted with on Friends.",
   },
   {
     name: "Memories",
     icon: "memories",
-    description: "Browse your old photos, videos and posts on Facebook.",
+    description: "Browse your old photos, videos and posts on Friends.",
   },
   {
     name: "Saved",

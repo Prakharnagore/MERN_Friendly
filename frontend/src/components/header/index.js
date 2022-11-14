@@ -50,7 +50,7 @@ export default function Header() {
           <Search color={color} />
           <input
             type="text"
-            placeholder="Search Facebook"
+            placeholder="Search Friends"
             className="hide_input"
           />
         </div>
