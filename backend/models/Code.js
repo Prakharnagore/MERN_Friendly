@@ -5,7 +5,7 @@ const { ObjectId } = mongoose.Schema;
 const codeSchema = new mongoose.Schema({
   code: {
     type: String,
-    require: true,
+    required: true,
   },
   user: {
     type: ObjectId,

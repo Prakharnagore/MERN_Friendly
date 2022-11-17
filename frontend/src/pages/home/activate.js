@@ -6,11 +6,10 @@ import Header from "../../components/header";
 import LeftHome from "../../components/home/left";
 import RightHome from "../../components/home/right";
 import Stories from "../../components/home/stories";
-import ActivateForm from "./ActivateForm.js";
+import ActivateForm from "./ActivateForm";
 import "./style.css";
 import axios from "axios";
 import Cookies from "js-cookie";
-
 export default function Activate() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -19,7 +18,9 @@ export default function Activate() {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(true);
   const { token } = useParams();
-
+  useEffect(() => {
+    activateAccount();
+  }, []);
   const activateAccount = async () => {
     try {
       setLoading(true);
@@ -38,6 +39,7 @@ export default function Activate() {
         type: "VERIFY",
         payload: true,
       });
+
       setTimeout(() => {
         navigate("/");
       }, 3000);
@@ -48,11 +50,6 @@ export default function Activate() {
       }, 3000);
     }
   };
-
-  useEffect(() => {
-    activateAccount();
-  }, []);
-
   return (
     <div className="home">
       {success && (

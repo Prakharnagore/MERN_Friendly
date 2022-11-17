@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import { useState } from "react";
 import "./style.css";
 import axios from "axios";
@@ -16,7 +15,6 @@ export default function SendVerification({ user }) {
           },
         }
       );
-      console.log(data);
       setSuccess(data.message);
     } catch (error) {
       setError(error.response.data.message);

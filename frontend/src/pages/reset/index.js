@@ -2,15 +2,14 @@ import "./style.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import Cookies from "js-cookie";
-// import { Form, Formik } from "formik";
+import { Form, Formik } from "formik";
 import { useState } from "react";
-// import LoginInput from "../../components/inputs/loginInput";
+import LoginInput from "../../components/inputs/loginInput";
 import SearchAccount from "./SearchAccount";
 import SendEmail from "./SendEmail";
 import CodeVerification from "./CodeVerification";
 import Footer from "../../components/login/Footer";
 import ChangePassword from "./ChangePassword";
-
 export default function Reset() {
   const { user } = useSelector((state) => ({ ...state }));
   const dispatch = useDispatch();
@@ -23,7 +22,6 @@ export default function Reset() {
   const [conf_password, setConf_password] = useState("");
   const [error, setError] = useState("");
   const [userInfos, setUserInfos] = useState("");
-
   const logout = () => {
     Cookies.set("user", "");
     dispatch({
@@ -31,15 +29,11 @@ export default function Reset() {
     });
     navigate("/login");
   };
-  // console.log(userInfos);
+  console.log(userInfos);
   return (
     <div className="reset">
       <div className="reset_header">
-        <img
-          src="../../icons/icon.png"
-          alt=""
-          style={{ width: "100px", padding: "5px" }}
-        />
+        <img src="../../../icons/facebook.svg" alt="" />
         {user ? (
           <div className="right_reset">
             <Link to="/profile">

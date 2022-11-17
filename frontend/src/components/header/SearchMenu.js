@@ -37,7 +37,7 @@ export default function SearchMenu({ color, setShowSearchMenu }) {
           )}
           <input
             type="text"
-            placeholder="Search Friends"
+            placeholder="Search Facebook"
             ref={input}
             onFocus={() => {
               setIconVisible(false);

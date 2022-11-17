@@ -9,7 +9,6 @@ import axios from "axios";
 import { useDispatch } from "react-redux";
 import Cookies from "js-cookie";
 import { useNavigate } from "react-router-dom";
-
 export default function RegisterForm({ setVisible }) {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -70,13 +69,13 @@ export default function RegisterForm({ setVisible }) {
   });
   const [dateError, setDateError] = useState("");
   const [genderError, setGenderError] = useState("");
+
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
   const [loading, setLoading] = useState(false);
 
   const registerSubmit = async () => {
     try {
-      setLoading(true);
       const { data } = await axios.post(
         `${process.env.REACT_APP_BACKEND_URL}/register`,
         {
@@ -91,10 +90,7 @@ export default function RegisterForm({ setVisible }) {
         }
       );
       setError("");
-      setLoading(false);
       setSuccess(data.message);
-
-      // console.log(data);
       const { message, ...rest } = data;
       setTimeout(() => {
         dispatch({ type: "LOGIN", payload: rest });
@@ -162,8 +158,6 @@ export default function RegisterForm({ setVisible }) {
                   name="first_name"
                   onChange={handleRegisterChange}
                 />
-              </div>
-              <div className="reg_line">
                 <RegisterInput
                   type="text"
                   placeholder="Surname"
@@ -206,6 +200,7 @@ export default function RegisterForm({ setVisible }) {
                 <div className="reg_line_header">
                   Gender <i className="info_icon"></i>
                 </div>
+
                 <GenderSelect
                   handleRegisterChange={handleRegisterChange}
                   genderError={genderError}

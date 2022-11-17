@@ -5,7 +5,7 @@ import {
   Friends,
   Gaming,
   HomeActive,
-  // Logo,
+  Logo,
   Market,
   Menu,
   Messenger,
@@ -36,11 +36,11 @@ export default function Header() {
   return (
     <header>
       <div className="header_left">
-        {/* <Link to="/" className="header_logo">
+        <Link to="/" className="header_logo">
           <div className="circle">
             <Logo />
           </div>
-        </Link> */}
+        </Link>
         <div
           className="search search1"
           onClick={() => {
@@ -50,7 +50,7 @@ export default function Header() {
           <Search color={color} />
           <input
             type="text"
-            placeholder="Search Friends"
+            placeholder="Search Facebook"
             className="hide_input"
           />
         </div>
@@ -81,13 +81,18 @@ export default function Header() {
           <img src={user?.picture} alt="" />
           <span>{user?.first_name}</span>
         </Link>
-        <div className="circle_icon hover1" ref={allmenu}>
+        <div
+          className={`circle_icon hover1 ${showAllMenu && "active_header"}`}
+          ref={allmenu}
+        >
           <div
             onClick={() => {
               setShowAllMenu((prev) => !prev);
             }}
           >
-            <Menu />
+            <div style={{ transform: "translateY(2px)" }}>
+              <Menu />
+            </div>
           </div>
 
           {showAllMenu && <AllMenu />}
@@ -99,13 +104,18 @@ export default function Header() {
           <Notifications />
           <div className="right_notification">5</div>
         </div>
-        <div className="circle_icon hover1" ref={usermenu}>
+        <div
+          className={`circle_icon hover1 ${showUserMenu && "active_header"}`}
+          ref={usermenu}
+        >
           <div
             onClick={() => {
               setShowUserMenu((prev) => !prev);
             }}
           >
-            <ArrowDown />
+            <div style={{ transform: "translateY(2px)" }}>
+              <ArrowDown />
+            </div>
           </div>
 
           {showUserMenu && <UserMenu user={user} />}

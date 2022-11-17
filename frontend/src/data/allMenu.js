@@ -1,8 +1,8 @@
-const menu = [
+export const menu = [
   {
     name: "Campus",
     icon: "campus",
-    description: "A unique, exclusive space for college students on Friends.",
+    description: "A unique, exclusive space for college students on Facebook.",
   },
   {
     name: "Events",
@@ -28,7 +28,7 @@ const menu = [
   {
     name: "Pages",
     icon: "pages",
-    description: "Discover and connect with businesses on Friends.",
+    description: "Discover and connect with businesses on Facebook.",
   },
   {
     name: "Gaming Video",
@@ -47,7 +47,7 @@ const menu = [
       "A video destination personalized to your interests and connections.",
   },
   {
-    name: "Friends Pay",
+    name: "Facebook Pay",
     icon: "pay",
     description: "A seamless, secure way to pay on the apps you already use.",
   },
@@ -59,12 +59,12 @@ const menu = [
   {
     name: "Recent Ad Activity",
     icon: "recent",
-    description: "See all the ads you interacted with on Friends.",
+    description: "See all the ads you interacted with on Facebook.",
   },
   {
     name: "Memories",
     icon: "memories",
-    description: "Browse your old photos, videos and posts on Friends.",
+    description: "Browse your old photos, videos and posts on Facebook.",
   },
   {
     name: "Saved",
@@ -120,7 +120,7 @@ const menu = [
     description: "Let kids message with close friends and family.",
   },
 ];
-const create = [
+export const create = [
   {
     name: "Post",
     icon: "m_post_icon",
@@ -159,5 +159,3 @@ const create = [
     icon: "m_post_job",
   },
 ];
-
-export { menu, create };

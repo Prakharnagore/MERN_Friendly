@@ -1,7 +1,6 @@
 import "./style.css";
 import { useField, ErrorMessage } from "formik";
 import { useMediaQuery } from "react-responsive";
-
 export default function RegisterInput({ placeholder, bottom, ...props }) {
   const [field, meta] = useField(props);
   const view1 = useMediaQuery({
@@ -39,7 +38,7 @@ export default function RegisterInput({ placeholder, bottom, ...props }) {
           className={view3 ? "input_error input_error_desktop" : "input_error"}
           style={{
             transform: "translateY(2px)",
-            left: `${test1 ? "-90%" : test2 ? "107%" : ""}`,
+            left: `${test1 ? "-107%" : test2 ? "107%" : ""}`,
           }}
         >
           {meta.touched && meta.error && <ErrorMessage name={field.name} />}
@@ -56,6 +55,7 @@ export default function RegisterInput({ placeholder, bottom, ...props }) {
           )}
         </div>
       )}
+
       {meta.touched && meta.error && <i className="error_icon"></i>}
     </div>
   );

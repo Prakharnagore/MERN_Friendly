@@ -45,7 +45,7 @@ export default function SendEmail({
         <div className="reset_right">
           <img src={userInfos.picture} alt="" />
           <span>{userInfos.email}</span>
-          <span>Friends user</span>
+          <span>Facebook user</span>
         </div>
       </div>
       {error && (

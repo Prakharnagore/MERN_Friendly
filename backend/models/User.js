@@ -1,6 +1,8 @@
 const mongoose = require("mongoose");
 
-const userSchema = new mongoose.Schema(
+const { ObjectId } = mongoose.Schema;
+
+const userSchema = mongoose.Schema(
   {
     first_name: {
       type: String,
@@ -21,6 +23,7 @@ const userSchema = new mongoose.Schema(
       text: true,
       unique: true,
     },
+
     email: {
       type: String,
       required: [true, "email is required"],
@@ -32,8 +35,9 @@ const userSchema = new mongoose.Schema(
     },
     picture: {
       type: String,
+      trim: true,
       default:
-        "https://www.kindpng.com/picc/m/24-248253_user-profile-default-image-png-clipart-png-download.png",
+        "https://res.cloudinary.com/dmhcnhtng/image/upload/v1643044376/avatars/default_pic_jeaybr.png",
     },
     cover: {
       type: String,
@@ -41,7 +45,7 @@ const userSchema = new mongoose.Schema(
     },
     gender: {
       type: String,
-      required: [true, "email is required"],
+      required: [true, "gender is required"],
       trim: true,
     },
     bYear: {
@@ -79,26 +83,57 @@ const userSchema = new mongoose.Schema(
       type: Array,
       default: [],
     },
-    search: [{ user: { type: mongoose.Schema.ObjectId, ref: "User" } }],
+    search: [
+      {
+        user: {
+          type: ObjectId,
+          ref: "User",
+        },
+      },
+    ],
     details: {
-      bio: { type: String },
-      otherName: { type: String },
-      job: { type: String },
-      workplace: { type: String },
-      highSchool: { type: String },
-      college: { type: String },
-      currentCity: { type: String },
-      hometown: { type: String },
-      relationsip: {
+      bio: {
+        type: String,
+      },
+      otherName: {
+        type: String,
+      },
+      job: {
+        type: String,
+      },
+      workplace: {
+        type: String,
+      },
+      highSchool: {
+        type: String,
+      },
+      college: {
+        type: String,
+      },
+      currentCity: {
+        type: String,
+      },
+      hometown: {
+        type: String,
+      },
+      relationship: {
         type: String,
         enum: ["Single", "In a relationship", "Married", "Divorced"],
       },
-      instagram: { type: String },
+      instagram: {
+        type: String,
+      },
     },
     savedPosts: [
       {
-        posts: { type: mongoose.Schema.ObjectId, ref: "Post" },
-        savedAt: { type: Date, default: new Date() },
+        post: {
+          type: ObjectId,
+          ref: "Post",
+        },
+        savedAt: {
+          type: Date,
+          default: new Date(),
+        },
       },
     ],
   },
