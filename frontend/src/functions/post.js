@@ -7,7 +7,6 @@ export const createPost = async (
   user,
   token
 ) => {
-  console.log(images);
   try {
     const { data } = await axios.post(
       `${process.env.REACT_APP_BACKEND_URL}/createPost`,

@@ -12,7 +12,7 @@ Steps
 9. npm i axios 
 10. npm i js-cookie
 11. npm install dotenv
-
+12. npm i react-moment
 
 - Backend Setup
 

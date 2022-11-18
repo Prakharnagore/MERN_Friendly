@@ -14,6 +14,7 @@ export default function ImagePreview({
   const handleImages = (e) => {
     let files = Array.from(e.target.files);
     files.forEach((img) => {
+      console.log(img);
       if (
         img.type !== "image/jpeg" &&
         img.type !== "image/png" &&
@@ -25,7 +26,7 @@ export default function ImagePreview({
         );
         files = files.filter((item) => item.name !== img.name);
         return;
-      } else if (img.size > 1024 * 1024) {
+      } else if (img.size > 1024 * 1024 * 5) {
         setError(`${img.name} size is too large max 5mb allowed.`);
         files = files.filter((item) => item.name !== img.name);
         return;
