@@ -4,8 +4,8 @@ const cors = require("cors");
 const fileUpload = require("express-fileupload");
 const { readdirSync } = require("fs");
 const dotenv = require("dotenv");
+const errorHandlerMiddleware = require("./middlwares/error");
 dotenv.config();
-
 const app = express();
 app.use(express.json());
 app.use(cors());
@@ -16,7 +16,7 @@ app.use(
 );
 //routes
 readdirSync("./routes").map((r) => app.use("/", require("./routes/" + r)));
-
+app.use(errorHandlerMiddleware);
 //database
 mongoose
   .connect(process.env.DATABASE_URL, {

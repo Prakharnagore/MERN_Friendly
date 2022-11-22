@@ -13,6 +13,8 @@ Steps
 10. npm i js-cookie
 11. npm install dotenv
 12. npm i react-moment
+13. npm i react-easy-crop
+14. npm i file-saver
 
 - Backend Setup
 

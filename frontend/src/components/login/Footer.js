@@ -24,12 +24,12 @@ export default function Footer() {
         <Link to="/">Sign Up</Link>
         <Link to="/">Log in</Link>
         <Link to="/">Messenger</Link>
-        <Link to="/">Facebook Lite</Link>
+        <Link to="/">friends Lite</Link>
         <Link to="/">Watch</Link>
         <Link to="/">Places</Link>
         <Link to="/">Games</Link>
         <Link to="/">Marketplace</Link>
-        <Link to="/">Facebook Pay</Link>
+        <Link to="/">friends Pay</Link>
         <Link to="/">Oculus</Link>
         <Link to="/">Portal</Link>
         <Link to="/">Instagram</Link>
@@ -55,7 +55,7 @@ export default function Footer() {
       </div>
       <div className="login_footer_wrap">
         <Link to="/" style={{ fontSize: "12px", marginTop: "10px" }}>
-          Meta © 2022
+          designed and built by prakhar © 2022
         </Link>
       </div>
     </footer>
